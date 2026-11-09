@@ -1,0 +1,63 @@
+{
+  "name": "dsh-wechat-draft-gate",
+  "version": "0.1.0",
+  "engines": { "dsh": ">=0.2.1-rc.2 <0.3.0" },
+  "description": "Outbound approval gate for WeChat replies in DeepSeek Harness: every reply lands in a local draft box, and only a panel confirmation or /send <id> releases it.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "docs",
+    "examples"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "wechat",
+    "weixin",
+    "draft",
+    "approval",
+    "outbox",
+    "gate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingchenhui0618-arch/dsh-wechat-draft-gate.git"
+  },
+  "homepage": "https://github.com/dingchenhui0618-arch/dsh-wechat-draft-gate#readme",
+  "bugs": {
+    "url": "https://github.com/dingchenhui0618-arch/dsh-wechat-draft-gate/issues"
+  },
+  "license": "MIT"
+}

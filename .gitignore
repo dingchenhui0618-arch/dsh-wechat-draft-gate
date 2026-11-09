@@ -1,0 +1,26 @@
+node_modules/
+*.log
+
+# Credentials and local runtime state never belong in the repository.
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Local draft boxes, ledgers and bridge captures.
+.wechat-draft-gate/
+drafts.json
+drafts.json.tmp-*
+*.jsonl
+
+# OS noise
+Thumbs.db
+.DS_Store
+desktop.ini
